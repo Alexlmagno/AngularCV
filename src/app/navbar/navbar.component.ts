@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, state, animate, style } from '@angular/animations';
 
-let maxHeight = 200;
-let minHeight = 50;
+let maxHeight = 120;
+let minHeight = 60;
 
 @Component({
   selector: 'app-navbar',
@@ -28,19 +28,24 @@ let minHeight = 50;
 export class NavbarComponent implements OnInit {
 
   bigMenu?: boolean;
+  collapsed?: boolean;
+  maxHeight?: number;
   navbarHeight?: number;
 
   constructor() { }
 
   ngOnInit() {
     this.bigMenu = false;
-    this.navbarHeight = 200;
+    this.navbarHeight = maxHeight;
+    this.maxHeight = maxHeight;
+    this.collapsed = false;
   }
 
   track($event: Event) {
     console.log("Scroll Event", $event.srcElement.children[0].scrollTop);
     this.bigMenu = $event.srcElement.children[0].scrollTop >  (this.bigMenu ? 0 : 50);
-    this.navbarHeight = 200 - $event.srcElement.children[0].scrollTop;
+    this.navbarHeight = this.maxHeight - $event.srcElement.children[0].scrollTop;
+    this.navbarHeight = this.navbarHeight > minHeight ? this.navbarHeight : minHeight;
   }
 
 }
