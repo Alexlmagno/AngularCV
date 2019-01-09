@@ -1,17 +1,17 @@
-// Custom.scss
-body{
-    display: flex;
-}
+// // Custom.scss
+// body{
+//     display: flex;
+// }
 
-// Your variable overrides
-$body-bg: #000;
-$body-color: #111;
+// // Your variable overrides
+// $body-bg: #000;
+// $body-color: #111;
 
-// Modify map
-$theme-colors: (
-    "primary": #7c24af,
-    "danger": #ff4136
-);
+// // Modify map
+// $theme-colors: (
+//     "primary": #b38cc9,
+//     "danger": #ff4136
+// );
 
-// Bootstrap and its default variables
-@import "../node_modules/bootstrap/scss/bootstrap";
+// // Bootstrap and its default variables
+// @import "../node_modules/bootstrap/scss/bootstrap";
