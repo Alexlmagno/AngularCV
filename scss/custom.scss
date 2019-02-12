@@ -1,17 +1,9 @@
-// // Custom.scss
-// body{
-//     display: flex;
-// }
-
-// // Your variable overrides
-// $body-bg: #000;
-// $body-color: #111;
-
-// // Modify map
-// $theme-colors: (
-//     "primary": #b38cc9,
-//     "danger": #ff4136
-// );
-
-// // Bootstrap and its default variables
-// @import "../node_modules/bootstrap/scss/bootstrap";
+.container {
+    border: 1px solid red;
+}
+.row {
+    border: 1px solid blue;
+}
+.row>*{
+    border: 1px solid green;
+}
