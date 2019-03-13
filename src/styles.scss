@@ -1,7 +1,38 @@
 body{
   position: relative;
+  background-color: green;
 }
 
 a{
   color: red;
+}
+
+.content{
+  border-radius: 8px;
+  background-color: white;
+}
+
+.carousel-background {
+  z-index: -10;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+} 
+.carousel-background .one {
+  //background: url(assets/img/slide3blur.jpg);
+  width: 110vw;
+  height: 100vh;
+  background-color:rgb(206, 158, 158);
+  background-size: cover;
+  box-shadow: inset 0px 0px -10px -10px rgb(158, 165, 206);
+  //-moz-background-size: cover;
+}
+.carousel-background .two {
+  //background: url(assets/img/slide2blur.jpg);
+  width: 110vw;
+  height: 100vh;
+  background-color: rgb(158, 165, 206);
+  background-size: cover;
+  -moz-background-size: cover;
+  box-shadow: inset 0px 0px -10px -10px rgb(206, 158, 158);
 }
