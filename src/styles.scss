@@ -1,3 +1,10 @@
+// avoid importing entire .scss as it might cause duplicate css styles
+// @import '~bootstrap/scss/bootstrap.scss'
+// safer to import variables and mixins only to avoid duplicate css styles
+@import '~bootstrap/scss/_functions';
+@import '~bootstrap/scss/_variables';
+@import '~bootstrap/scss/mixins/_breakpoints';
+
 body{
   position: relative;
   background-color: green;
@@ -7,9 +14,20 @@ a{
   color: red;
 }
 
+.image-container{
+  align-self: center;
+}
+
 .content{
-  border-radius: 8px;
+  //border-radius: 0px;
+  margin-top: 10rem;
   background-color: white;
+}
+@include media-breakpoint-up(sm) {
+  .content {
+    border-radius: 8px;
+    background-color: white;
+  }
 }
 
 .carousel-background {
@@ -24,7 +42,6 @@ a{
   height: 100vh;
   background-color:rgb(206, 158, 158);
   background-size: cover;
-  box-shadow: inset 0px 0px -10px -10px rgb(158, 165, 206);
   //-moz-background-size: cover;
 }
 .carousel-background .two {
@@ -34,5 +51,16 @@ a{
   background-color: rgb(158, 165, 206);
   background-size: cover;
   -moz-background-size: cover;
-  box-shadow: inset 0px 0px -10px -10px rgb(206, 158, 158);
+}
+
+.carousel-inner {
+  margin-top: 3rem;
+}
+
+.navEng {
+  background-color: rgb(158, 165, 206);
+}
+
+.navMus {
+  background-color: rgb(206, 158, 158);
 }
