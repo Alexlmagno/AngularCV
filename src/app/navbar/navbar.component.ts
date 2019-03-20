@@ -10,6 +10,7 @@ declare var $: any;
 })
 export class NavbarComponent implements OnInit {
   type: String;
+  typeString: String;
   loops: number;
 
   constructor(private typeService: TypeService) { }
@@ -17,9 +18,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.getType();
     this.loops = 1;
+    this.typeString = this.type === 'Eng' ? 'Ingenieria' : 'Musica';
   }
 
-  changeCV() {
+  changeCV(): void {
     this.typeService.changeType();
     this.getType();
 
@@ -39,9 +41,15 @@ export class NavbarComponent implements OnInit {
       duration: 1000,
       easing: 'easeInOutCirc'
     });
+
+    this.typeString = this.type === 'Eng' ? 'Ingenieria' : 'Musica';
   }
 
   throttleChangeCV = _.throttle(this.changeCV,1000);
+
+  scrollToElement(element): void {
+    $(element)[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
   getType(): void {
     this.type = this.typeService.getType();
